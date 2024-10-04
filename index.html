@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>BIOLOGIAR</title>
+  <link rel="icon" type="image/x-icon" href="/assets/icon.jpeg">
+  <meta name="description" content="Explora el mundo celular en 3D con realidad aumentada." />
+  <meta name="author" content="Ariel Victor Olguin" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#177662" />
+  <meta name="msapplication-TileColor" content="#177662" />
+  <meta name="msapplication-TileImage" content="./assets/icon.jpeg" />
+  <meta name="keywords" content="" />
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link href="https://unpkg.com/@tailwindcss/custom-forms/dist/custom-forms.min.css" rel="stylesheet" />
+
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+    html {
+      font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    }
+  </style>
+
+  <!-- cv ine -> estefani maricruz hernandez  -->
+
+</head>
+
+<body class="leading-normal tracking-normal text-indigo-400 m-6 bg-cover bg-fixed"
+  style="background-image: url('gradient.png');">
+  < class="h-full">
+
+    <div class="menu w-full fixed z-40 top-0 left-0  bg-opacity-40 p-4">
+      <div class="flex items-center justify-between text-white">
+
+        <a class="lg:hidden flex items-center text-white opacity-75 no-underline hover:no-underline font-bold text-2xl lg:text-4xl"
+          href="#">
+          BIOLOGI<span class="bg-clip-text text-green-400">AR</span>
+        </a>
+        <button class="lg:hidden" onclick="toggleMobileMenu()">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+        </button>
+      </div>
+
+
+      <div class="hidden" id="mobileMenu">
+
+        <div class="fixed inset-0 bg-gray-800 bg-opacity-95 z-50 flex flex-col items-center justify-center lg:hidden">
+          <ul>
+            <li><a class="text-white text-xl py-2" href="#inicio">Inicio</a></li>
+            <li><a class="text-white text-xl py-2" href="#acerca">Acerca de</a></li>
+            <li><a class="text-white text-xl py-2" href="#caracteristicas">Características</a></li>
+            <li><a class="text-white text-xl py-2" href="#descargar">Descargar</a></li>
+          </ul>
+     
+          <button class="mt-8" onclick="toggleMobileMenu()">
+            <svg class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="hidden lg:flex flex-grow items-center no-underline hover:no-underline font-bold text-2xl lg:text-4xl"
+        id="desktopMenu">
+        <a class="flex items-center text-white opacity-75 no-underline hover:no-underline font-bold text-2xl lg:text-4xl"
+          href="#">
+          BIOLOGI<span class="bg-clip-text text-green-400">AR</span>
+        </a>
+        <ul class="flex flex-col lg:flex-row list-none lg:ml-auto">
+          <li class="nav-item"><a
+              class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+              href="#inicio">Inicio</a></li>
+          <li class="nav-item"><a
+              class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+              href="#acerca">Acerca de</a></li>
+          <li class="nav-item"><a
+              class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+              href="#caracteristicas">Características</a></li>
+          <li class="nav-item"><a
+              class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+              href="#descargar">Descargar</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="container pt-24 md:pt-15 mx-auto flex flex-wrap flex-col md:flex-row items-center scroll-smooth">
+
+      <div id="inicio"
+        class="scroll-mt-10 flex flex-col w-full xl:w-2/5 justify-center lg:items-start overflow-y-hidden ">
+        <h1 class="my-4 text-3xl md:text-5xl text-white opacity-75 font-bold leading-tight text-center md:text-left">
+          Explora
+          <span class="bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-green-300 to-green-500">
+            el mundo
+          </span>
+          celular en 3D con realidad aumentada.
+        </h1>
+        <p class="leading-normal text-green-200 md:text-2xl mb-8 text-center md:text-left">
+          Aprendizaje interactivo y visual para todos. Descubre la ciencia de forma revolucionaria.
+        </p>
+
+      </div>
+
+      <div class="w-full h-full xl:w-3/5 p-12 overflow-hidden">
+
+        <model-viewer id="orbit-demo"
+          class="mx-auto w-full h-80 md:w-4/5 transform -rotate-6 transition hover:scale-105 duration-700 ease-in-out hover:rotate-6"
+          src="./assets/celulaAnimal.glb" poster="" ar camera-controls auto-rotate touch-action="pan-y" disable-zoom
+          alt="Celula Animal"></model-viewer>
+
+      </div>
+
+      <div data-aos="fade-up" id="acerca"
+        class="scroll-mt-80 mt-20 px-6 py-8 bg-green-100 rounded-lg shadow-lg text-gray-700">
+        <h2 class="text-3xl font-bold text-center">Acerca de BIOLOGIAR</h2>
+        <p class="mt-4">
+          En BIOLOGIAR, nuestra misión nació de una visión compartida: transformar radicalmente el aprendizaje de la
+          biología, llevándolo más allá de las tradicionales y estáticas páginas de los libros de texto. Observamos cómo
+          la educación convencional, apoyada principalmente en material impreso e imágenes, a menudo resultaba en una
+          experiencia de aprendizaje monótona y poco estimulante para los estudiantes. Inspirados por el potencial
+          ilimitado de la tecnología, nos propusimos crear una solución que no solo fomentara el aprendizaje, sino que
+          también hiciera que este proceso fuera emocionante, interactivo y visualmente atractivo.
+        </p>
+        <p class="mt-4">
+          Nuestra visión es clara: aprovechar la realidad aumentada para abrir un mundo de posibilidades educativas,
+          haciendo que la biología celular sea accesible, comprensible y fascinante para todos. Creemos firmemente que
+          al integrar la tecnología en la educación, podemos despertar una pasión duradera por la ciencia en estudiantes
+          y aficionados por igual, preparándolos para los desafíos del futuro con una base sólida y un entusiasmo
+          renovado por el aprendizaje.
+        </p>
+        <h3 class="text-2xl font-bold mt-8">Equipo BIOLOGIAR</h3>
+        <p class="mt-4">
+          El corazón de BIOLOGIAR late gracias al compromiso y la pasión de sus fundadores: Brayan Giovanni Delion y
+          Ariel Victor Olguin. Cada uno aporta a la mesa un conjunto único de habilidades pero todos compartimos un
+          objetivo común: revolucionar la manera en que se enseña y aprende la biología.
+        </p>
+
+      </div>
+
+      <div data-aos="fade-up" id="caracteristicas"
+        class="mt-10 px-6 py-8 bg-green-200 rounded shadow-lg text-gray-700">
+        <h2 class="text-3xl font-bold text-center">Características de BIOLOGIAR</h2>
+
+        <div class="flex flex-wrap mt-8 items-center md:flex-row flex-col-reverse">
+       
+          <div data-aos="fade-right" class="w-full md:w-1/4 p-4 flex justify-center items-center">
+           
+            <video src="./assets/videos/ra.mp4" class="rounded shadow-lg transform scale-75" autoplay loop></video>
+          </div>
+
+       
+          <div data-aos="fade-left" class="w-full md:w-3/4 p-4">
+            <h3 class="text-2xl font-bold">Realidad Aumentada</h3>
+            <p class="mt-4">
+              BIOLOGIAR eleva la experiencia de aprendizaje de la biología celular a un nuevo nivel mediante la
+              integración de la realidad aumentada (RA). Esta tecnología permite a los usuarios visualizar modelos 3D
+              detallados de células directamente en su entorno real, usando simplemente la cámara de su dispositivo
+              móvil. Al superponer imágenes digitales sobre el mundo real, BIOLOGIAR crea una experiencia educativa
+              inmersiva que hace que las células sean tangibles y explorables como nunca antes. La RA no solo captura la
+              imaginación de los usuarios, sino que también proporciona una comprensión más profunda de las estructuras
+              celulares y sus funciones, facilitando una conexión visual y espacial que los métodos de enseñanza
+              tradicionales no pueden igualar.
+            </p>
+          </div>
+        </div>
+
+
+        <div class="flex flex-wrap mt-8 items-center">
+
+          <div data-aos="fade-right" class="w-full md:w-3/4 p-4">
+            <h3 class="text-2xl font-bold">Interactividad</h3>
+            <p class="mt-4">
+              En BIOLOGIAR, creemos que la interacción es clave para el aprendizaje. Por eso, nuestra aplicación permite
+              a los usuarios no solo ver, sino también interactuar con los modelos celulares en 3D. Mediante gestos
+              simples en la pantalla de su dispositivo, los usuarios pueden acercar (zoom) para ver detalles finos,
+              rotar las células para apreciarlas desde diferentes ángulos y descomponerlas en sus componentes celulares
+              para entender mejor su estructura y funcionamiento. Esta interactividad enriquece la experiencia de
+              aprendizaje, permitiendo a los usuarios explorar a su propio ritmo y según sus intereses, lo que resulta
+              en un entendimiento más profundo y personalizado de la materia.
+            </p>
+          </div>
+
+          <div data-aos="fade-left" class="w-full md:w-1/4 p-4 flex justify-center items-center">
+            
+            <video src="./assets/videos/interaccion.mp4" class="rounded shadow-lg transform scale-75" autoplay
+              loop></video>
+          </div>
+        </div>
+
+
+        <div class="flex flex-wrap mt-8 items-center md:flex-row flex-col-reverse">
+          
+          <div data-aos="fade-right" class="w-full md:w-1/4 p-4 flex justify-center items-center">
+            
+            <video src="./assets/videos/informacion.mp4" class="rounded shadow-lg transform scale-75" autoplay
+              loop></video>
+          </div>
+      
+          <div data-aos="fade-left" class="w-full md:w-3/4 p-4">
+            <h3 class="text-2xl font-bold">Contenido Educativo</h3>
+            <p class="mt-4">
+              Además de las impresionantes visualizaciones en 3D, BIOLOGIAR ofrece contenido educativo enriquecido
+              diseñado para complementar la experiencia de realidad aumentada. Los usuarios tienen acceso a
+              descripciones detalladas de las funciones celulares, proporcionando contexto y profundidad a lo que están
+              viendo. Este contenido es claro, conciso y adaptado para diferentes niveles de conocimiento, asegurando
+              que estudiantes, profesores y entusiastas de la biología puedan obtener el máximo provecho de la
+              aplicación. Desde explicaciones básicas de la estructura celular hasta discusiones avanzadas sobre
+              procesos biológicos complejos, BIOLOGIAR está equipado para ser una herramienta de aprendizaje integral y
+              accesible para todos.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div data-aos="fade-up" id="descargar"
+      class="mt-20 px-6 py-10 bg-gradient-to-r from-green-300 via-green-400 to-green-500 rounded shadow-lg text-white">
+      <div class="text-center">
+        <h2 class="text-4xl font-bold mb-4">Descarga BIOLOGIAR(Pre-alfa)</h2>
+        <p class="mb-8 text-lg">Sumérgete en el mundo celular con realidad aumentada y transforma tu aprendizaje de la
+          biología.</p>
+
+        <div class="mb-8">
+          <video class="mx-auto rounded" width="120" height="240" autoplay loop>
+            <source src="./assets/videos/videoAplicacion.mp4" type="video/mp4">
+            Tu navegador no soporta la etiqueta de video.
+          </video>
+        </div>
+
+
+        <a href="/assets/aplication/BIOLOGIAR.apk"
+          class="bg-white text-green-600 font-bold py-2 px-4 rounded inline-block hover:bg-gray-100 transition duration-300">Descargar</a>
+
+      </div>
+    </div>
+
+    <!-- Esta es la seccion que voy agregar para los qr  -->
+   
+
+    <div data-aos="fade-up" id="descargar"
+    class="mt-20 px-6 py-10 bg-gradient-to-r from-green-300 via-green-400 to-green-500 rounded shadow-lg text-white">
+    <div class="text-center">
+      <h2 class="text-4xl font-bold mb-3">Ayúdanos a seguir mejorando</h2>
+      <h3>Nos encantaría que nos ayudaras a mejorar. Simplemente escanea los códigos QR que verás a continuación y responde dos breves cuestionarios. ¡Prometemos que no te tomará mucho tiempo! 😊<br>
+        Tu retroalimentación nos permite seguir creciendo y ofrecerte lo mejor. ¡Gracias por ser parte de este proceso!</h3>
+    </div>
+  
+    <!-- Contenedor dividido en tres secciones -->
+    <div class="flex flex-col md:flex-row justify-between items-center">
+      <!-- Lado izquierdo (Docente) -->
+      <div class="w-full md:w-1/3 text-center mb-6 md:mb-0">
+        <img src="assets/img/QrDocente.png" alt="Imagen Docente" class="mx-auto mb-4">
+        <p id="tema" class="text-lg font-semibold">Docente</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeH74OOkgl756NMjw1wqNpHlicTb4xvVT_8MNaiM6XARoXkJQ/viewform" target="_blank"
+          class="text-blue-500 underline">Ir al sitio</a>
+      </div>
+  
+    
+  
+      <!-- Lado derecho (Alumnos) -->
+      <div class="w-full md:w-1/3 text-center">
+        <img src="assets/img/QrUsuario.png" alt="Imagen Alumnos" class="mx-auto mb-4">
+        <p id="autor" class="text-lg font-semibold">Alumnos</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdH9uIXjE5-L3Ju_9JhTVHZdQqiUuhr4-mvbapGtKrpxBXgiw/viewform" target="_blank"
+          class="text-blue-500 underline">Ir al sitio</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-20 px-6 py-10 bg-gradient-to-r from-green-300 via-green-400 to-green-500 rounded shadow-lg text-white">
+    <div class="text-center">
+      <h2 class="text-4xl font-bold mb-3">Descarga ArCore</h2>
+
+    </div>
+  
+    <!-- Contenedor centrado -->
+    <div class="flex justify-center">
+      <div class="w-full md:w-1/3 text-center mb-6 md:mb-0">
+        <img src="assets/img/QR CORE.png" alt="Imagen Personal" class="mx-auto mb-4">
+        <p id="personal" class="text-lg font-semibold">ARcore</p>
+        <a href="https://play.google.com/store/apps/details?id=com.google.ar.core&pcampaignid=web_share" target="_blank"
+          class="text-blue-500 underline">Ir al sitio</a>
+      </div>
+    </div>
+  </div>
+  
+  
+
+
+
+
+
+    <div class="w-full pt-16 pb-6 text-sm text-center md:text-left fade-in">
+      <a class="text-gray-500 no-underline hover:no-underline" href="#">&copy; BIOLOGIAR</a>
+      - Creada por
+      <a class="text-gray-500 no-underline hover:no-underline" href="">ARVIOJ & D3L10N</a>
+    </div>
+  </div>
+  </div>
+</body>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+<script src="./app.js"></script>
+
+</html>
